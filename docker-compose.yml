@@ -2,11 +2,9 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
       - .:/app
-
-
-    restart: unless-stopped
+      - /app/node_modules
+    command: npm run dev
