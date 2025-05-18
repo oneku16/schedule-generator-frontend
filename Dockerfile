@@ -1,28 +1,17 @@
-# Stage 1: Build the frontend
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 
-# Set working directory
 WORKDIR /app
 
-# Install dependencies
-COPY package.json package-lock.json* pnpm-lock.yaml* ./
+# копируем package.json и package-lock.json
+COPY package*.json ./
+
+# устанавливаем зависимости
 RUN npm install
 
-# Copy the rest of the code
+# копируем оставшийся код
 COPY . .
 
-# Build the app (assumes you're using Vite/React/etc.)
-RUN npm run build
+ENV PATH=/app/node_modules/.bin:$PATH
 
-# Stage 2: Serve with a lightweight HTTP server
-FROM nginx:alpine
+CMD ["npm", "run", "dev"]
 
-# Copy built assets from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Optional: custom nginx config
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
