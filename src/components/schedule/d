@@ -1,0 +1,37 @@
+[
+    {
+        "lecture": "Mathematics II",
+        "start_time": "09:00",
+        "end_time": "10:30",
+        "room": "104",
+        "day": "Friday"
+    },
+    {
+        "lecture": "Mathematics II",
+        "start_time": "14:00",
+        "end_time": "15:30",
+        "room": "104",
+        "day": "Wednesday"
+    },
+    {
+        "lecture": "Mathematics II",
+        "start_time": "09:00",
+        "end_time": "10:30",
+        "room": "201",
+        "day": "Wednesday"
+    },
+    {
+        "lecture": "English Writing for Media",
+        "start_time": "14:00",
+        "end_time": "15:30",
+        "room": "203",
+        "day": "Friday"
+    },
+    {
+        "lecture": "English Writing for Media",
+        "start_time": "14:00",
+        "end_time": "15:30",
+        "room": "204",
+        "day": "Monday"
+    },
+]

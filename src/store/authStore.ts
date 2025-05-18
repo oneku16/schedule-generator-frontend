@@ -21,8 +21,7 @@ const useAuthStore = create<AuthStore>((set) => ({
     set({ isLoading: true, error: null });
     try {
       const response = await authAPI.login({ email, password });
-      const user = response.data;
-      console.log("user:", user);
+      const user = response.data.data;
       set({ user, isAuthenticated: true, isLoading: false });
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Login failed';
